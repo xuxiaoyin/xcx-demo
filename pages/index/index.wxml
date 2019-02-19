@@ -1,16 +1,24 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!--pages/index/index.wxml-->
+<view class="top-wrap">
+  <view class="search-wrap">
+    <view class="option">
+      <view class="select-time">
+        <picker
+          mode="date"
+          start="1880"
+          end="2019"
+          fields="year"
+          value="{{date}}"
+          bindchange="bindDateChange"
+        >
+          {{date}}
+          <image src="/assets/images/down.png" mode="widthFix" />
+        </picker>
+      </view>
+      <input type="text" placeholder="请输入搜索内容" class="inp" />
+    </view>
+    <view class="search-btn" size="mini">搜索</view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <navigator url="/pages/movie/movie" open-type="switchTab">视频页</navigator>
+  
 </view>
-
 

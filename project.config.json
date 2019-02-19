@@ -13,8 +13,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.0",
-	"appid": "wxc56e91b46454d0e5",
-	"projectname": "xcx",
+	"appid": "wx9fe3460067c81818",
+	"projectname": "%E6%A0%A1%E5%8F%B2",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -28,13 +28,24 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"scene": null
+				}
+			]
 		}
 	}
 }

@@ -1,32 +1,45 @@
 {
-  "pages":[
+  "pages": [
+    "pages/login/login",
     "pages/index/index",
-    "pages/movie/movie",
-    "pages/logs/logs"
+    "pages/register/register",
+    "pages/forget/forget",
+    "pages/schoolfellow/schoolfellow",
+    "pages/notice/notice",
+    "pages/my/my"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#43a3f4",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"white"
+  "window": {
+    "navigationBarBackgroundColor": "#b99646",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "名校中学",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
   },
-  "tabBar":{
-    "backgroundColor":"#43a3f4",
-    "color":"#fff",
-    "selectedColor":"#ee1d89",
-    "list":[
-      {
-        "pagePath":"pages/movie/movie",
-        "text":"视频",
-        "iconPath":"common/images/movie.png",
-        "selectedIconPath":"common/images/movie-select.png"
-      },
-      {
-        "pagePath":"pages/logs/logs",
-        "text":"日志",
-        "iconPath":"common/images/log.png",
-        "selectedIconPath":"common/images/log-select.png"
-      }
-    ]
+  "tabBar": {
+    "backgroundColor": "#b99646",
+    "color": "#fff",
+    "selectedColor":"#ffb100",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "校史馆",
+      "iconPath": "assets/images/school.png",
+      "selectedIconPath": "assets/images/school-active.png"
+    },{
+      "pagePath": "pages/schoolfellow/schoolfellow",
+      "text": "校友圈",
+      "iconPath": "assets/images/friend.png",
+      "selectedIconPath": "assets/images/friend-active.png"
+    },{
+      "pagePath": "pages/notice/notice",
+      "text": "公告通知",
+      "iconPath": "assets/images/notice.png",
+      "selectedIconPath": "assets/images/notice-active.png"
+    },{
+      "pagePath": "pages/my/my",
+      "text": "我",
+      "iconPath": "assets/images/my.png",
+      "selectedIconPath": "assets/images/my-active.png"
+    }]
   }
 }

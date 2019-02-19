@@ -1,0 +1,28 @@
+<!--pages/login/login.wxml-->
+<view class='login'>
+  <image src='/assets/images/login-bg.jpg' class='login-bg'></image>
+  <view class='login-wrap'>
+    <!-- <form bindsubmit="formSubmit"> -->
+      <view class='title'>登录</view>
+      <view class='inp'>
+        <input type='text' confirm-type='next'  placeholder='用户名'/>
+      </view>
+      <view class='inp'>
+        <input password='true' type='text' confirm-type='done' placeholder='密码'/>
+      </view>
+      <view class='login-btn'>
+        <button class='btn1' size='mini' bindtap='login'>登录</button>
+        <button class='btn2' size='mini' bindtap='register'>注册</button>
+      </view>
+    <!-- </form> -->
+    <view class='password-info'>
+      <checkbox-group class="rember">
+        <label>
+          <checkbox value='请记住用户名' />请记住用户名
+        </label>
+      </checkbox-group>
+      <navigator class="forget" url='/pages/forget/forget'>忘记密码</navigator>
+    </view>
+  </view>
+  
+</view>

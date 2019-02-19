@@ -1,13 +1,23 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
+// pages/index/index.js
 Page({
-  data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  }
 
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    date: '2016'
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  bindDateChange(e) {
+    this.setData({
+      date:e.detail.value
+    })
+  }
 })
