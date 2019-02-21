@@ -1,1 +1,22 @@
 /* pages/schoolfellow/schoolfellow.wxss */
+.list{ 
+  display: flex;
+  padding:16rpx 24rpx; 
+  margin-bottom: 1rpx; 
+  background: #fff; 
+}
+.list .pic{
+  flex: 0 0 106rpx;
+  position: relative;
+  width: 106rpx;
+  height: 106rpx;
+  margin-right: 24rpx;
+}
+.list .pic image{
+  width: 106rpx;
+  height: 106rpx;
+  border-radius: 50%;
+}
+.list .top{
+height: 60rpx;
+}

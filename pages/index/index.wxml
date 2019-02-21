@@ -1,24 +1,75 @@
 <!--pages/index/index.wxml-->
-<view class="top-wrap">
-  <view class="search-wrap">
-    <view class="option">
-      <view class="select-time">
-        <picker
-          mode="date"
-          start="1880"
-          end="2019"
-          fields="year"
-          value="{{date}}"
-          bindchange="bindDateChange"
-        >
-          {{date}}
-          <image src="/assets/images/down.png" mode="widthFix" />
-        </picker>
+<scroll-view scroll-y='true' style='height: 100%' lower-threshold='100' bindscrolltolower='lower'>
+  <view class="top-wrap">
+    <view class="search-wrap">
+      <view class="option">
+        <view class="select-time">
+          <picker
+            mode="date"
+            start="1880"
+            end="2019"
+            fields="year"
+            value="{{date}}"
+            bindchange="bindDateChange"
+          >
+            {{date}}
+            <image src="/assets/images/down.png" mode="widthFix" />
+          </picker>
+        </view>
+        <input type="text" placeholder="请输入搜索内容" class="inp" />
       </view>
-      <input type="text" placeholder="请输入搜索内容" class="inp" />
+      <view class="search-btn" size="mini">搜索</view>
     </view>
-    <view class="search-btn" size="mini">搜索</view>
+    
+
+    <view class="top-tab">
+      <view 
+        class="item {{categoryActive==index?'active':''}}" 
+        wx:for="{{category}}" wx:key="index"
+        data-index="{{index}}"
+        bind:tap="changeCategory"
+      >
+        {{ item[index] }}
+      </view>
+    </view>
   </view>
-  
-</view>
+
+  <view class="type">
+    <view 
+      class="item {{typeActive==index?'active':''}}" 
+      wx:for="{{ type }}" wx:key="index"
+      bind:tap="changeType"
+      data-index="{{index}}"
+    >
+      {{ item[index] }}
+    </view>
+  </view>
+
+  <view class="list-wrap">
+    <view class="list" wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.ID}}" bind:tap="toarticle">
+      <view class="author">
+        <image src="/assets/images/author.jpg" mode="widthFix" />
+        <text>{{item.NAME}}-2020届3班 · {{item.PUBLISHDATE}}</text>
+      </view>
+      <view class="article-info">
+        <view class="title">{{item.TITLE}}</view>
+        <rich-text class="article" nodes="{{item.CONTENT}}" type="text"></rich-text>
+      </view>
+      <view class="public-info">
+        <text class="type-article">类型：{{item.TOPICID}}</text>
+        <text class="year">年代：2018</text>
+        <text class="source">来源：学校一百二十年</text>
+      </view>
+      <view class="skim-info">
+        <view class="kan active"><image src="/assets/images/icon-kan-active.png"  mode="widthFix"/> 1000</view>
+        <view class="cang"><image src="/assets/images/icon-cang.png" mode="widthFix" /> 1000</view>
+        <view class="zan"><image src="/assets/images/icon-zan.png"  mode="widthFix" /> 1000</view>
+      </view>
+    </view>
+
+    <view class='loading' wx:if='{{loading}}'>
+      <image mode='widthFix' src='/assets/loading/loading-bars.svg'></image>
+    </view>
+  </view>
+</scroll-view>
 

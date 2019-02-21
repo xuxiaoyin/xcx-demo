@@ -45,6 +45,9 @@ page{
 }
 .login-btn button{
   color: #fff;
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   border-color: #fff;
   background: #f8bb00;
 }

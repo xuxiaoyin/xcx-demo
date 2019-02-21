@@ -6,7 +6,8 @@
     "pages/forget/forget",
     "pages/schoolfellow/schoolfellow",
     "pages/notice/notice",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/article/article"
   ],
   "window": {
     "navigationBarBackgroundColor": "#b99646",
@@ -19,27 +20,32 @@
   "tabBar": {
     "backgroundColor": "#b99646",
     "color": "#fff",
-    "selectedColor":"#ffb100",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "校史馆",
-      "iconPath": "assets/images/school.png",
-      "selectedIconPath": "assets/images/school-active.png"
-    },{
-      "pagePath": "pages/schoolfellow/schoolfellow",
-      "text": "校友圈",
-      "iconPath": "assets/images/friend.png",
-      "selectedIconPath": "assets/images/friend-active.png"
-    },{
-      "pagePath": "pages/notice/notice",
-      "text": "公告通知",
-      "iconPath": "assets/images/notice.png",
-      "selectedIconPath": "assets/images/notice-active.png"
-    },{
-      "pagePath": "pages/my/my",
-      "text": "我",
-      "iconPath": "assets/images/my.png",
-      "selectedIconPath": "assets/images/my-active.png"
-    }]
+    "selectedColor": "#ffb100",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "校史馆",
+        "iconPath": "assets/images/school.png",
+        "selectedIconPath": "assets/images/school-active.png"
+      },
+      {
+        "pagePath": "pages/schoolfellow/schoolfellow",
+        "text": "校友圈",
+        "iconPath": "assets/images/friend.png",
+        "selectedIconPath": "assets/images/friend-active.png"
+      },
+      {
+        "pagePath": "pages/notice/notice",
+        "text": "公告通知",
+        "iconPath": "assets/images/notice.png",
+        "selectedIconPath": "assets/images/notice-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我",
+        "iconPath": "assets/images/my.png",
+        "selectedIconPath": "assets/images/my-active.png"
+      }
+    ]
   }
 }
