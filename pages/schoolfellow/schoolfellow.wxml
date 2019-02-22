@@ -1,15 +1,28 @@
 <view class="wrap">
-  <view class='list'>
-    <view class='pic'>
-      <image src='/assets/images/author.jpg' mode='widthFix'></image>
-      <text class='sum'>1</text>
-    </view>
-    <view class='text'>
-      <view class='top'>
-        <view class='left'>好友</view>
-        <view class='right'>16:58</view>
-      </view>
-      <view class='bottom'>今天下雨</view>
-    </view>
-  </view>
+  <view class="list-wrap" wx:for="{{list}}" wx:key="{{item.id}}">
+    <movable-area>
+      <movable-view out-of-bounds="true" direction="horizontal" x="{{item.xmove}}"
+        inertia="true"
+        data-listIndex="{{index}}"
+        bindtouchstart="handleTouchStart"
+        bindtouchend="handleTouchEnd"
+        bindchange="handleMovableChange">
+        <view class="list"> 
+          <view class='pic'>
+            <image src='{{item.avtor?item.avtor:defaultAvtor}}' mode='widthFix'></image>
+            <text class='{{item.newSum?"sum":""}}'>{{item.newSum<100?item.newSum:'99+'}}</text>
+          </view>
+          <view class='text'>
+            <view class='top'>
+              <view class='left'>{{item.name}}</view>
+              <view class='right'>{{item.time}}</view>
+            </view>
+            <view class='bottom'>{{item.lastMsg}}</view>
+          </view>
+        </view>
+      </movable-view>
+    </movable-area>
+    <view class="delete-btn" data-id="{{item.id}}" bindtap="handleDeleteList">删除</view>
+  </view> 
 </view>
+

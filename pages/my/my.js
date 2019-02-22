@@ -1,66 +1,137 @@
-// pages/my/my.js
+//获取应用实例
+const app = getApp()
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    productList: [
+      {
+        id: 1,
+        name: '产品一',
+        code: 100001,
+        amount: 1
+      },
+      {
+        id: 2,
+        name: '产品二',
+        code: 100002,
+        amount: 5
+      },
+      {
+        id: 3,
+        name: '产品三',
+        code: 300001,
+        amount: 10
+      }
+    ],
+    slideProductList: [
+      {
+        id: 4,
+        name: '产品五',
+        code: 400001,
+        amount: 101
+      },
+      {
+        id: 5,
+        name: '产品六',
+        code: 500002,
+        amount: 500
+      },
+      {
+        id: 6,
+        name: '产品七',
+        code: 600001,
+        amount: 110
+      }
+    ]
+  },
+
+  onLoad: function () {
 
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 显示删除按钮
    */
-  onLoad: function (options) {
-
+  showDeleteButton: function (e) {
+    let productIndex = e.currentTarget.dataset.productindex
+    this.setXmove(productIndex, -65)
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 隐藏删除按钮
    */
-  onReady: function () {
+  hideDeleteButton: function (e) {
+    let productIndex = e.currentTarget.dataset.productindex
 
+    this.setXmove(productIndex, 0)
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 设置movable-view位移
    */
-  onShow: function () {
+  setXmove: function (productIndex, xmove) {
+    let productList = this.data.productList
+    productList[productIndex].xmove = xmove
 
+    this.setData({
+      productList: productList
+    })
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
+   * 处理movable-view移动事件
    */
-  onHide: function () {
-
+  handleMovableChange: function (e) {
+    if (e.detail.source === 'friction') {
+      if (e.detail.x < -30) {
+        this.showDeleteButton(e)
+      } else {
+        this.hideDeleteButton(e)
+      }
+    } else if (e.detail.source === 'out-of-bounds' && e.detail.x === 0) {
+      this.hideDeleteButton(e)
+    }
   },
 
   /**
-   * 生命周期函数--监听页面卸载
+   * 处理touchstart事件
    */
-  onUnload: function () {
-
+  handleTouchStart(e) {
+    this.startX = e.touches[0].pageX
   },
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
+   * 处理touchend事件
    */
-  onPullDownRefresh: function () {
-
+  handleTouchEnd(e) {
+    if(e.changedTouches[0].pageX < this.startX && e.changedTouches[0].pageX - this.startX <= -30) {
+      this.showDeleteButton(e)
+    } else if(e.changedTouches[0].pageX > this.startX && e.changedTouches[0].pageX - this.startX < 30) {
+      this.showDeleteButton(e)
+    } else {
+      this.hideDeleteButton(e)
+    }
   },
 
   /**
-   * 页面上拉触底事件的处理函数
+   * 删除产品
    */
-  onReachBottom: function () {
+  handleDeleteProduct: function ({ currentTarget: { dataset: { id } } }) {
+    let productList = this.data.productList
+    let productIndex = productList.findIndex(item => item.id = id)
 
+    productList.splice(productIndex, 1)
+
+    this.setData({
+      productList
+    })
+    if (productList[productIndex]) {
+      this.setXmove(productIndex, 0)
+    }
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
-  }
 })

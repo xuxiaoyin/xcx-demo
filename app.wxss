@@ -3,3 +3,9 @@ page{
   height: 100%;
   background: #f7f7fa;
 }
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
