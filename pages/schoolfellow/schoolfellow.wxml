@@ -1,12 +1,9 @@
 <view class="wrap">
-  <view class="list-wrap" wx:for="{{list}}" wx:key="{{item.id}}">
+  <view class="list-wrap" wx:for="{{list}}" wx:key="{{item.listId}}">
     <movable-area>
       <movable-view out-of-bounds="true" direction="horizontal" x="{{item.xmove}}"
         inertia="true"
-        data-listIndex="{{index}}"
-        bindtouchstart="handleTouchStart"
-        bindtouchend="handleTouchEnd"
-        bindchange="handleMovableChange">
+        data-listIndex="{{index}}">
         <view class="list"> 
           <view class='pic'>
             <image src='{{item.avtor?item.avtor:defaultAvtor}}' mode='widthFix'></image>
@@ -22,7 +19,7 @@
         </view>
       </movable-view>
     </movable-area>
-    <view class="delete-btn" data-id="{{item.id}}" bindtap="handleDeleteList">删除</view>
+    <view class="delete-btn" data-id="{{index}}" bindtap="handleDeleteList">删除</view>
   </view> 
 </view>
 

@@ -1,2 +1,227 @@
 <!--pages/register/register.wxml-->
-<text>注册</text>
+<view class="top">
+  <image src="{{_src?_src:'/assets/images/author.jpg'}}" class="user" mode="aspectFill"/>
+  <image src="/assets/images/photo.png"  class="photo" bind:tap="chooseImg"/>
+</view>
+
+<view class="list-wrap">
+  <form bindsubmit="formSubmit">
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/name.png" />
+      </view>
+      <view class="text">
+        <input type="text" placeholder="请输入真实姓名" />
+        <text class="red">*</text>
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/address.png" />
+      </view>
+      <view class="text">
+        <picker
+          mode="region"
+          bindchange="bindRegionChange"
+          value="{{region}}"
+          custom-item="{{customItem}}"
+        >
+          <view class="picker">
+              {{region[0]}},{{region[1]}},{{region[2]}}
+              <text class="placeholder">(请选择籍贯)</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/sex.png" />
+      </view>
+      <view class="text">
+        <radio-group class="radio-group">
+          <label wx:for="{{sex}}" wx:for-item="item" wx:key="{{item.id}}">
+            <radio value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
+          </label>
+        </radio-group>
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/card.png" />
+      </view>
+      <view class="text">
+        <input type="number" placeholder="请输入身份证号" />
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/birthday.png" />
+      </view>
+      <view class="text">
+        <picker
+          mode="date"
+          fields="day"
+          value="{{date}}"
+          start="1880-01-01"
+          end="2019-09-01"
+          bindchange="bindDateChange"
+        >
+          <view class="picker">
+            {{date}} <text class="placeholder">(请选择生日)</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/house.png" />
+      </view>
+      <view class="text">
+        <picker
+          mode="region"
+          bindchange="bindRegionChange1"
+          value="{{region1}}"
+          custom-item="{{customItem1}}"
+        >
+          <view class="picker">
+              {{region1[0]}}，{{region1[1]}}，{{region1[2]}} <text class="placeholder">(请选择现居地)</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/phone.png" />
+      </view>
+      <view class="text">
+        <input type="number" placeholder="请输入手机号" />
+        <text class="red">*</text>
+      </view>
+    </view>
+    
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/code.png" />
+      </view>
+      <view class="text code">
+        <input type="number" placeholder="请输入验证码" />
+        <button size="mini" class="code-btn">获取验证码</button>
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/weixin.png" />
+      </view>
+      <view class="text">
+        <input type="number" placeholder="请输入微信号" />
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/email.png" />
+      </view>
+      <view class="text">
+        <input type="number" placeholder="请输入邮箱" />
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/qq.png" />
+      </view>
+      <view class="text">
+        <input type="number" placeholder="请输入QQ号" />
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="pic">
+        <image src="/assets/images/study.png" />
+      </view>
+      <view class="text addstudy" bind:tap="goAdd">
+        <text class="add">+</text>名校中学教育
+      </view>
+    </view>
+
+    <view class="study-wrap">
+      <view class="study">
+        <text class="name">阶段：</text>
+        <picker bindchange="bindPickerChange" value="{{stage_index}}" range="{{stage}}">
+          {{stage[stage_index]}} <text class="placeholder">(请选择就学阶段)</text>
+        </picker>
+      </view>
+
+      <view class="study">
+        <text class="name">校区：</text>
+        <picker bindchange="bindPickerChange1" value="{{stage_index1}}" range="{{stage1}}">
+            {{stage1[stage_index1]}} <text class="placeholder">(请选择就读校区)</text>
+        </picker>
+      </view>
+
+      <view class="study">
+        <text class="name">区间：</text>
+        <picker
+          mode="date"
+          fields="day"
+          value="{{date1}}"
+          start="1880-01-01"
+          end="2019-09-01"
+          bindchange="bindDateChange1"
+          class="pic1"
+        >
+          <view class="picker">
+            {{date1}}
+          </view>
+        </picker>~
+        <picker
+          mode="date"
+          fields="day"
+          value="{{date2}}"
+          start="1880-01-01"
+          end="2019-09-01"
+          bindchange="bindDateChange2"
+          class="pic1"
+        >
+          <view class="picker">
+            {{date2}}
+          </view>
+        </picker>
+        <text class="red">*</text>
+      </view>
+
+      <view class="study">
+        <text class="name">班主任：</text>
+        <input type="text" placeholder="请输入班主任姓名" />
+        <text class="red">*</text>
+      </view>
+
+      <view class="study">
+        <text class="name">同学：</text>
+        <input type="text" placeholder="请输入至少3位同学姓名" />
+        <text class="red">*</text>
+      </view>
+
+      <view class="study">
+        <text class="name">班级：</text>
+        <picker bindchange="bindPickerChangeClass" value="{{class_index}}" range="{{class}}" class="class01">
+          <view class="picker">
+            {{class[class_index]}}
+          </view>
+        </picker><view class="left">，</view>
+        <input type="text" placeholder="1" class="class01"/> <view class="left">班，</view> <input type="text" placeholder="2007" class="class01"/> <view class="left">届</view>
+        <text class="red">*</text>
+      </view>
+
+    </view>
+
+    <button size="default"  form-type="submit" class="sub-btn">注册审核</button>
+  </form>
+</view>

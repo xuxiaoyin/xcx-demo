@@ -1,66 +1,120 @@
 // pages/register/register.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    _src:'',
+    region: ['广东省', '广州市', '海珠区'],
+    customItem: '全部',
+    region1: ['广东省', '广州市', '海珠区'],
+    customItem1: '全部',
+    sex:[
+      {
+        'id':1,
+        'name': '男',
+        'value': 1,
+        checked: 'true'
+      },
+      {
+        'id':2,
+        'name': '女',
+        'value': 2
+      },
+    ],
+    date:'2019-01-01',
+    date1:'2019-01-01',
+    date2:'2019-01-01',
+    studyCount:0,
+    stage: ['初中','高中'],
+    stage_index:0,
+    stage1: ['番禺校区','白云校区'],
+    stage_index1:0,
+    class:['一年级','二年级','三年级'],
+    class_index:0
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  chooseImg() {
+    var _this=this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        _this.setData({
+          _src:tempFilePaths
+        })
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  bindRegionChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  bindRegionChange1(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region1: e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  bindDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  bindDateChange1(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date1: e.detail.value
+    })
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  bindDateChange2(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date2: e.detail.value
+    })
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+  goAdd() {
+    let count=this.data.studyCount
+    count++
+    this.setData({
+      studyCount:count
+    })
+    
+  },
+  bindPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      stage_index: e.detail.value
+    })
+  },
+  bindPickerChange1(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      stage_index1: e.detail.value
+    })
+  },
+  bindPickerChangeClass(e) {
+    this.setData({
+      class_index: e.detail.value
+    })
+  },
 
+  formSubmit(e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
   }
+
 })

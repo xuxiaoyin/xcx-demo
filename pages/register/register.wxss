@@ -1,1 +1,133 @@
 /* pages/register/register.wxss */
+page{
+  background: #fff;
+}
+.top{
+  position: relative;
+  width: 168rpx;
+  height: 168rpx;
+  margin: 0 auto;
+  padding:30rpx 0;
+  text-align: center;
+}
+.top .user{
+  width: 168rpx;
+  height: 168rpx;
+  border-radius: 50%;
+}
+.top .photo{
+  position:absolute;
+  width: 50rpx;
+  height: 50rpx;
+  right: 0;
+  bottom: 30rpx;
+}
+.list{
+  height: 50rpx;
+  padding: 15rpx 40rpx;
+  line-height: 50rpx;
+  font-size: 14px;
+  overflow: hidden;
+}
+.list .pic{
+  float: left;
+  margin-right: 30rpx;
+  width: 50rpx;
+}
+.list .pic image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.list .text{ 
+  float: left;
+  width: 590rpx;
+}
+.text input, .list picker{
+  display: inline-block;
+  height: 50rpx;
+  width: 550rpx;
+  border-bottom: 1rpx solid #bfbfbf;
+}
+.placeholder{
+  color: #888;
+}
+.red{
+  display: inline-block;
+  font-size: 20px;
+  color: red;
+}
+.radio-group{
+  height: 50rpx;
+  width: 550rpx;
+}
+.radio-group label{
+  margin-right: 100rpx;
+}
+radio{
+  transform: scale(0.7);
+}
+.code input{
+  width: 300rpx;
+}
+.code .code-btn{
+  display: inline-block;
+  width: 220rpx;
+  margin-left: 30rpx;
+  background: #ffb100;
+  color: #fff;
+}
+.addstudy{
+  color: #1b83dc;
+}
+.add{
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  background: #1b83dc;
+  color: #fff;
+  margin-right: 20rpx;
+  margin-top: 7rpx;
+  border-radius: 50%;
+}
+.study-wrap{
+  font-size: 14px;
+  padding-left: 120rpx;
+  padding-right: 40rpx;
+}
+.study{
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 15rpx 0;
+}
+.study .name{
+  width: 120rpx;
+  float: left;
+}
+.study picker,.study input{
+  float: left;
+  width: 428rpx;
+  height: 50rpx;
+  border-bottom: 1rpx solid #bfbfbf;
+}
+.study .picker{
+  float: left;
+}
+.study .pic1{
+  width: 200rpx;
+  line-height: 50rpx;
+  float: none;
+  display: inline-block;
+}
+.study .class01{
+  width: 110rpx;
+  display: inline-block;
+  text-align: center;
+}
+.sub-btn{
+  width: 80%;
+  background: #ffb100;
+  margin: 60rpx auto;
+  color: #fff;
+}
