@@ -1,0 +1,57 @@
+<!--common/template/header.wxml-->
+<template name="header">
+  <view class="top-wrap">
+    <view class="search-wrap">
+      <view class="option">
+        <view class="select-time" wx:if="{{isSelect}}">
+          <picker
+            mode="{{mode}}"
+            start="1880"
+            end="2019"
+            fields="year"
+            value="{{date}}"
+            bindchange="bindDateChange"
+          >
+            {{date}}
+            <image src="/assets/images/down.png" mode="widthFix" />
+          </picker>
+        </view>
+
+        <view class="select-time" wx:if="{{isSelectType}}">
+          <picker bindchange="bindPickerChange" value="{{typeIndex}}" range="{{TypeArray}}">
+          <view class="picker">
+            {{TypeArray[typeIndex]}}
+            <image src="/assets/images/down.png" mode="widthFix" />
+          </view>
+        </picker>
+        </view>
+
+        <input type="text" placeholder="请输入搜索内容" class="inp" />
+      </view>
+      <view class="search-btn" size="mini">搜索</view>
+    </view>
+    
+
+    <view class="top-tab">
+      <view 
+        class="item {{categoryActive==index?'active':''}}" 
+        wx:for="{{category}}" wx:key="index"
+        data-index="{{index}}"
+        bind:tap="changeCategory"
+      >
+        {{ item[index] }}
+      </view>
+    </view>
+  </view>
+
+  <view class="type">
+    <view 
+      class="item {{typeActive==index?'active':''}}" 
+      wx:for="{{ type }}" wx:key="index"
+      bind:tap="changeType"
+      data-index="{{index}}"
+    >
+      {{ item[index] }}
+    </view>
+  </view>
+</template>

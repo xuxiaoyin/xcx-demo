@@ -2,6 +2,7 @@
 Page({
   data: {
     date: '2016',
+    mode:'date',
     type:[
       {'0':'全部'},
       {'1':'学校人物'},
@@ -16,8 +17,29 @@ Page({
     ],
     categoryActive:0,
     list:[],
+    list1:[
+      {
+        id:1,
+        NAME:'张三',
+        PUBLISHDATE:'2019-03-04',
+        TITLE:'今天雨好大',
+        CONTENT:'下雨了，下雨了，下雨了，下雨了下雨了，下雨了下雨了，下雨了下雨了，下雨了',
+        TOPICID:'学校印记'
+      },
+      {
+        id:2,
+        NAME:'李四',
+        PUBLISHDATE:'2019-03-04',
+        TITLE:'今天雨好大',
+        CONTENT:'下雨了，下雨了，下雨了，下雨了下雨了，下雨了下雨了，下雨了下雨了，下雨了',
+        TOPICID:'学校印记'
+      }
+    ],
     pageNo:'1',
-    loading:false
+    loading:false,
+    isSelect:true,
+    isSelectType:false,
+    api:false
   },
   onLoad: function (options) {
     this.loadData();
@@ -44,7 +66,8 @@ Page({
         this.setData({
           list,
           pageNo,
-          loading:false
+          loading:false,
+          api:true
         })
         wx.hideLoading();
       }
@@ -64,6 +87,12 @@ Page({
     console.log(e.currentTarget.dataset.id);
     wx.navigateTo({
       url: '/pages/article/article?id=' + e.currentTarget.dataset.id,
+    })
+  },
+  bindDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
     })
   }
 

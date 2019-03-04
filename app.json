@@ -7,8 +7,7 @@
     "pages/schoolfellow/schoolfellow",
     "pages/notice/notice",
     "pages/my/my",
-    "pages/article/article",
-    "pages/addstudy/addstudy"
+    "pages/article/article"
   ],
   "window": {
     "navigationBarBackgroundColor": "#b99646",

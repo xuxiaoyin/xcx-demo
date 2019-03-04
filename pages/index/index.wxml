@@ -1,52 +1,11 @@
 <!--pages/index/index.wxml-->
+ <import src="/common/template/header.wxml"></import>
 <scroll-view scroll-y='true' style='height: 100%' lower-threshold='100' bindscrolltolower='lower'>
-  <view class="top-wrap">
-    <view class="search-wrap">
-      <view class="option">
-        <view class="select-time">
-          <picker
-            mode="date"
-            start="1880"
-            end="2019"
-            fields="year"
-            value="{{date}}"
-            bindchange="bindDateChange"
-          >
-            {{date}}
-            <image src="/assets/images/down.png" mode="widthFix" />
-          </picker>
-        </view>
-        <input type="text" placeholder="请输入搜索内容" class="inp" />
-      </view>
-      <view class="search-btn" size="mini">搜索</view>
-    </view>
-    
-
-    <view class="top-tab">
-      <view 
-        class="item {{categoryActive==index?'active':''}}" 
-        wx:for="{{category}}" wx:key="index"
-        data-index="{{index}}"
-        bind:tap="changeCategory"
-      >
-        {{ item[index] }}
-      </view>
-    </view>
-  </view>
-
-  <view class="type">
-    <view 
-      class="item {{typeActive==index?'active':''}}" 
-      wx:for="{{ type }}" wx:key="index"
-      bind:tap="changeType"
-      data-index="{{index}}"
-    >
-      {{ item[index] }}
-    </view>
-  </view>
+  
+  <template is="header" data="{{date,mode,categoryActive,type,category,typeActive,isSelect,isSelectType}}"></template>
 
   <view class="list-wrap">
-    <view class="list" wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.ID}}" bind:tap="toarticle">
+    <view class="list" wx:for="{{api?list:list1}}" wx:key="{{index}}" data-id="{{item.ID}}" bind:tap="toarticle">
       <view class="author">
         <image src="/assets/images/author.jpg" mode="widthFix" />
         <text>{{item.NAME}}-2020届3班 · {{item.PUBLISHDATE}}</text>

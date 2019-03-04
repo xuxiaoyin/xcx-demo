@@ -151,17 +151,17 @@
       </view>
     </view>
 
-    <view class="study-wrap">
+    <view class="study-wrap" wx:for="{{studyCount}}" wx:key="{{studyCount}}">
       <view class="study">
         <text class="name">阶段：</text>
-        <picker bindchange="bindPickerChange" value="{{stage_index}}" range="{{stage}}">
+        <picker bindchange="bindPickerChange" value="{{stage_index}}" range="{{stage}}" data-rangeId="{{studyCount}}">
           {{stage[stage_index]}} <text class="placeholder">(请选择就学阶段)</text>
         </picker>
       </view>
 
       <view class="study">
         <text class="name">校区：</text>
-        <picker bindchange="bindPickerChange1" value="{{stage_index1}}" range="{{stage1}}">
+        <picker bindchange="bindPickerChange1" value="{{stage_index1}}" range="{{stage1}}" data-xiaoquId="{{studyCount}}">
             {{stage1[stage_index1]}} <text class="placeholder">(请选择就读校区)</text>
         </picker>
       </view>
@@ -176,6 +176,7 @@
           end="2019-09-01"
           bindchange="bindDateChange1"
           class="pic1"
+          data-qujian1Id="{{studyCount}}"
         >
           <view class="picker">
             {{date1}}
@@ -188,6 +189,7 @@
           start="1880-01-01"
           end="2019-09-01"
           bindchange="bindDateChange2"
+          data-qujian2Id="{{studyCount}}"
           class="pic1"
         >
           <view class="picker">
@@ -211,7 +213,7 @@
 
       <view class="study">
         <text class="name">班级：</text>
-        <picker bindchange="bindPickerChangeClass" value="{{class_index}}" range="{{class}}" class="class01">
+        <picker bindchange="bindPickerChangeClass" value="{{class_index}}" range="{{class}}" class="class01" data-classId="{{studyCount}}">
           <view class="picker">
             {{class[class_index]}}
           </view>
