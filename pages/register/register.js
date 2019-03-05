@@ -29,7 +29,25 @@ Page({
     stage1: ['番禺校区','白云校区'],
     stage_index1:0,
     class:['一年级','二年级','三年级'],
-    class_index:0
+    class_index:0,
+    studyInfo:[{
+      id: 1,
+      school:'北京大学',
+      zye:'电子信息工程'
+    },{
+      id: 2,
+      school:'师大附中',
+      zye:''
+    }],
+    workInfo:[{
+      id:1,
+      name:'尚恩科技',
+      zwei:'前端开发'
+    },{
+      id:2,
+      name:'腾讯',
+      zwei:'前端开发'
+    }]
   },
 
   onLoad: function (options) {
@@ -73,38 +91,34 @@ Page({
     })
   },
 
-  bindDateChange1(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      date1: e.detail.value
+  goAdd(e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '/pages/add-education/add-education'
     })
   },
-
-  bindDateChange2(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+  deleAdd(e) {
+    console.log(e)
+    var _index=e.currentTarget.dataset.index;
+    let studyInfo=this.data.studyInfo;
+    studyInfo.splice(_index,1)
     this.setData({
-      date2: e.detail.value
+      studyInfo
     })
   },
-
-  goAdd() {
-    let count=this.data.studyCount
-    count++
-    this.setData({
-      studyCount:count
-    })
-    
-  },
-  bindPickerChange(e) {
-    console.log('picker发送选择改变，携带值为', e)
-    this.setData({
-      stage_index: e.detail.value
+  goAddwork(e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '/pages/add-work/add-work'
     })
   },
-  bindPickerChange1(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+  deleAddwork(e) {
+    console.log(e)
+    var _index=e.currentTarget.dataset.index;
+    let workInfo=this.data.workInfo;
+    workInfo.splice(_index,1)
     this.setData({
-      stage_index1: e.detail.value
+      workInfo
     })
   },
   bindPickerChangeClass(e) {

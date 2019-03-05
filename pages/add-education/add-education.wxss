@@ -1,0 +1,38 @@
+page{
+  background: #fff;
+  font-size: 14px;
+}
+.wrap{
+  padding: 40rpx;
+}
+.section{
+  height: 90rpx;
+  margin-top: 60rpx;
+  border-bottom: 1rpx solid #bfbfbf;
+}
+.picker_group{
+	display: block;
+	font-size: 14px;
+	color: #c8c8c8;
+}
+.picker_group picker{
+	display: inline-block;
+	position: relative;
+	color: #232323;
+}
+.picker_group picker image{
+	width: 24rpx;
+	height: 14rpx;
+}
+.btn{
+  margin-top: 100rpx;
+  display: flex;
+  font-size: 15px;
+}
+.btn button{
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #ffb100;
+  color: #fff;
+}

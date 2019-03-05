@@ -7,15 +7,13 @@
   </template>
 
   <view class="list-wrap">
-    <view class="list">
+    <view class="list" bind:tap="goDetail">
       <view class="title">新年快乐</view>
       <view class="content">祝大家新年快乐</view>
       <view class="info">
         <view class="item">创建人：张三</view>
         <view class="item">2019-03-04</view>
-        <view class="item">
-          <image src="/assets/images/icon-kan.png"/>
-        </view>     
+        <view class="item">已读</view>     
       </view>
     </view>
   </view>

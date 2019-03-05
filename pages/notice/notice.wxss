@@ -17,9 +17,10 @@
 .list-wrap .content{
   height: 46rpx;
   line-height: 46rpx; 
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
   overflow:hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   font-size: 13px;
   color: #222;
 }

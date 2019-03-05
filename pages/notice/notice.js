@@ -60,10 +60,10 @@ Page({
       typeActive:e.currentTarget.dataset.index
     })
   },
-  toarticle(e){
+  goDetail(e){
     console.log(e.currentTarget.dataset.id);
     wx.navigateTo({
-      url: '/pages/article/article?id=' + e.currentTarget.dataset.id,
+      url: '/pages/notice-detail/notice-detail?id=' + e.currentTarget.dataset.id,
     })
   },
   bindPickerChange(e) {

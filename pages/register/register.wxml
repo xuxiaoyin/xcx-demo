@@ -142,86 +142,38 @@
       </view>
     </view>
 
-    <view class="list">
+    <view class="list add-list">
       <view class="pic">
         <image src="/assets/images/study.png" />
       </view>
-      <view class="text addstudy" bind:tap="goAdd">
-        <text class="add">+</text>名校中学教育
+      <view class="study-wrap">
+        <view class="addstudy delestudy" bind:tap="goAdd" wx:for="{{studyInfo}}" wx:key="{{index}}">
+          <text class="add delete" catch:tap="deleAdd" data-index="{{index}}">x</text>
+          <text class="school">{{item.school}}</text>
+          <text class="zye">{{item.zye}}</text>
+        </view>
+        <view class="addstudy" bind:tap="goAdd">
+          <text class="add">+</text>添加名校中学教育
+        </view>
       </view>
+      
     </view>
 
-    <view class="study-wrap" wx:for="{{studyCount}}" wx:key="{{studyCount}}">
-      <view class="study">
-        <text class="name">阶段：</text>
-        <picker bindchange="bindPickerChange" value="{{stage_index}}" range="{{stage}}" data-rangeId="{{studyCount}}">
-          {{stage[stage_index]}} <text class="placeholder">(请选择就学阶段)</text>
-        </picker>
+    <view class="list add-list">
+      <view class="pic">
+        <image src="/assets/images/work.png" />
       </view>
-
-      <view class="study">
-        <text class="name">校区：</text>
-        <picker bindchange="bindPickerChange1" value="{{stage_index1}}" range="{{stage1}}" data-xiaoquId="{{studyCount}}">
-            {{stage1[stage_index1]}} <text class="placeholder">(请选择就读校区)</text>
-        </picker>
+      <view class="study-wrap">
+        <view class="addstudy delestudy" bind:tap="goAddwork" wx:for="{{workInfo}}" wx:key="{{index}}">
+          <text class="add delete" catch:tap="deleAddwork" data-index="{{index}}">x</text>
+          <text class="school">{{item.name}}</text>
+          <text class="zye">{{item.zwei}}</text>
+        </view>
+        <view class="addstudy" bind:tap="goAddwork">
+          <text class="add">+</text>添加职业经历
+        </view>
       </view>
-
-      <view class="study">
-        <text class="name">区间：</text>
-        <picker
-          mode="date"
-          fields="day"
-          value="{{date1}}"
-          start="1880-01-01"
-          end="2019-09-01"
-          bindchange="bindDateChange1"
-          class="pic1"
-          data-qujian1Id="{{studyCount}}"
-        >
-          <view class="picker">
-            {{date1}}
-          </view>
-        </picker>~
-        <picker
-          mode="date"
-          fields="day"
-          value="{{date2}}"
-          start="1880-01-01"
-          end="2019-09-01"
-          bindchange="bindDateChange2"
-          data-qujian2Id="{{studyCount}}"
-          class="pic1"
-        >
-          <view class="picker">
-            {{date2}}
-          </view>
-        </picker>
-        <text class="red">*</text>
-      </view>
-
-      <view class="study">
-        <text class="name">班主任：</text>
-        <input type="text" placeholder="请输入班主任姓名" />
-        <text class="red">*</text>
-      </view>
-
-      <view class="study">
-        <text class="name">同学：</text>
-        <input type="text" placeholder="请输入至少3位同学姓名" />
-        <text class="red">*</text>
-      </view>
-
-      <view class="study">
-        <text class="name">班级：</text>
-        <picker bindchange="bindPickerChangeClass" value="{{class_index}}" range="{{class}}" class="class01" data-classId="{{studyCount}}">
-          <view class="picker">
-            {{class[class_index]}}
-          </view>
-        </picker><view class="left">，</view>
-        <input type="text" placeholder="1" class="class01"/> <view class="left">班，</view> <input type="text" placeholder="2007" class="class01"/> <view class="left">届</view>
-        <text class="red">*</text>
-      </view>
-
+      
     </view>
 
     <button size="default"  form-type="submit" class="sub-btn">注册审核</button>

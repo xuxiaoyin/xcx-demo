@@ -1,0 +1,40 @@
+/* pages/article/article.wxss */
+page{
+  padding: 20rpx 28rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+ .title{
+  line-height: 50rpx;
+  margin-bottom: 20rpx;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+.article-info{
+  margin: 20rpx 0;
+}
+.article{
+  line-height: 46rpx; 
+  font-size: 13px;
+  color: #222;
+}
+.article-info .pic{
+  text-align: center;
+  margin: 20rpx 0;
+}
+.article-info image{
+  max-width: 100%;
+}
+.public-info{
+  margin: 20rpx 0;
+  color: #888;
+  font-size: 12px;
+  text-align: right;
+}
+.public-info .year,.public-info .source{
+  display: inline-block;
+}
+.public-info .source{
+  margin-left: 60rpx;
+}

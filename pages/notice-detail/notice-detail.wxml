@@ -1,0 +1,12 @@
+<!--pages/article/article.wxml-->
+<view class='title'>第三任山长廖延相</view>
+<view class="article-info">
+  <rich-text class="article" nodes="其人精研三礼，尤长于音韵之学，学问为当时士林所重。在任时书院藏书楼冠冕楼是广东藏书最多之处所，其规模之大，数量之多，为近世中国少见，遂将冠冕楼藏书编成《广雅书院藏书目录》三册共七卷，以利诸生查阅，并著《广雅问答》（六卷）、《读史札记》等." type="text"></rich-text>
+  <view class="pic">
+    <image src="/assets/images/author.jpg"  mode="widthFix"/>
+  </view>
+</view>
+<view class="public-info">
+  <view class="year">年代：2019年3月5日</view>
+  <view class="source">创建人：学校一百二十年</view>
+</view>

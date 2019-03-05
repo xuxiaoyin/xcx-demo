@@ -29,6 +29,9 @@ page{
   font-size: 14px;
   overflow: hidden;
 }
+.add-list{
+  height: auto;
+}
 .list .pic{
   float: left;
   margin-right: 30rpx;
@@ -38,7 +41,7 @@ page{
   width: 50rpx;
   height: 50rpx;
 }
-.list .text{ 
+.list .text,.list .study-wrap{ 
   float: left;
   width: 590rpx;
 }
@@ -78,6 +81,7 @@ radio{
 }
 .addstudy{
   color: #1b83dc;
+  margin-bottom: 20rpx;
 }
 .add{
   display: inline-block;
@@ -91,43 +95,18 @@ radio{
   margin-top: 7rpx;
   border-radius: 50%;
 }
-.study-wrap{
-  font-size: 14px;
-  padding-left: 120rpx;
-  padding-right: 40rpx;
+.delete{
+  background: #ff384a;
 }
-.study{
-  height: 50rpx;
-  line-height: 50rpx;
-  padding: 15rpx 0;
-}
-.study .name{
-  width: 120rpx;
-  float: left;
-}
-.study picker,.study input{
-  float: left;
-  width: 428rpx;
-  height: 50rpx;
-  border-bottom: 1rpx solid #bfbfbf;
-}
-.study .picker{
-  float: left;
-}
-.study .pic1{
-  width: 200rpx;
-  line-height: 50rpx;
-  float: none;
-  display: inline-block;
-}
-.study .class01{
-  width: 110rpx;
-  display: inline-block;
-  text-align: center;
+.delestudy{
+  color: #1c1c1c;
 }
 .sub-btn{
   width: 80%;
   background: #ffb100;
   margin: 60rpx auto;
   color: #fff;
+}
+.school{
+  margin-right: 30rpx;
 }

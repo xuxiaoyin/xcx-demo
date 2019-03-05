@@ -1,0 +1,33 @@
+<!--pages/add-education/add-education.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="wrap">
+    <view class="section">
+      <input type="text"  placeholder="请输入公司名称"/>
+    </view>
+    <view class="section">
+      <input type="text"  placeholder="请输入职位名称"/>
+    </view>
+    <view class="section">
+      <view class="picker_group">
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="{{date2}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+            <image src="/assets/images/down.png"></image>
+          </view>
+        </picker>
+        到
+        <picker mode="date" value="{{date2}}" start="{{date}}" end="2018-01-24" bindchange="bindDateChange2">
+          <view class="picker">
+            {{date2}}
+            <image src="/assets/images/down.png"></image>
+          </view>
+        </picker>      
+      </view>
+    </view>
+
+    <view class="btn">
+      <button form-type="submit">完成</button>
+      <button form-type="reset">清空</button>
+    </view>
+  </view>
+</form>
