@@ -1,0 +1,51 @@
+.list{
+  padding: 30rpx;
+  background: #fff;
+  margin: 10rpx 0;
+}
+.list-top{
+  display: flex;
+  height: 150rpx;
+}
+.list-top .first-pic{
+  flex: 0 0 300rpx;
+  width: 300rpx;
+}
+.list-top .first-pic image{
+  width: 300rpx;
+  max-height: 150rpx;
+}
+.list-top .text{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 40rpx;
+  justify-content: space-between;
+}
+.list-top .text .title{
+  max-height: 92rpx;
+  line-height: 46rpx;
+  font-size: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+}
+.list-top .text .tip{
+  height: 58rpx;
+  line-height: 58rpx;
+  font-size: 13px;
+  color: #888;
+}
+.list-bottom{
+  margin-top: 40rpx;
+  height: 60rpx;
+  font-size: 13px;
+  line-height: 60rpx;
+}
+.list-bottom .right image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 40rpx;
+  margin-top: 10rpx;
+}

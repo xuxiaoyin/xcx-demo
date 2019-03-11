@@ -1,0 +1,78 @@
+.top{
+  display: flex;
+  height: 168rpx;
+  padding: 18rpx 30rpx;
+  background: #fff;
+}
+.top .pic{
+  flex: 0 0 168rpx;
+  width: 168rpx;
+  height: 100%;
+  margin-right: 50rpx;
+}
+.pic image{
+  width: 168rpx;
+  height: 168rpx;
+  border-radius: 50%;
+}
+.top .info{
+  flex: 1;
+  text-align: center;
+}
+.info .number{
+  display: flex;
+}
+.number .item{
+  flex: 1;
+  font-size: 13px;
+}
+.number .item .num{
+  font-size: 20px;
+  font-weight: bold;
+}
+.edit{
+  float: right;
+  width: 228rpx;
+  margin-top: 20rpx;
+}
+.tab-nav{
+  display: flex;
+  height: 168rpx;
+  margin: 20rpx 0;
+  background: #fff;
+}
+.nav-item{
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+}
+.nav-item image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 40rpx;
+}
+.nav-item .text{
+  line-height: 66rpx;
+}
+.list-nav{
+  padding: 0 28rpx;
+  background: #fff;
+}
+.list-nav .list{
+  height: 98rpx;
+  line-height: 98rpx;
+  border-bottom: 1rpx solid #e4e4e4;
+} 
+.list-nav .list:nth-last-of-type(1){
+  border: none;
+}
+.list-nav .list .text{
+  float: left;
+  font-size: 13px;
+}
+.list-nav .list image{
+  float: right;
+  margin-top: 35rpx;
+  width: 16rpx;
+  height: 28rpx;
+}

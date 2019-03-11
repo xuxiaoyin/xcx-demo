@@ -1,0 +1,16 @@
+@import '/common/css/tab.wxss';
+@import '/common/css/publish-list.wxss';
+.publish-btn{
+  position: fixed;
+  z-index: 9999;
+  width: 116rpx;
+  height: 116rpx;
+  bottom: 100rpx;
+  right: 40rpx;
+  border-radius: 50%;
+  box-shadow: 0rpx 5rpx 10rpx 5rpx rgba(0, 0, 0, 0.2);
+}
+.publish-btn image{
+  width: 116rpx;
+  height: 116rpx;
+}

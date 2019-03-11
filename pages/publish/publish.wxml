@@ -1,0 +1,12 @@
+<import src="/common/template/tab.wxml"></import>
+<import src="/common/template/publish-list.wxml"></import>
+
+<view class="publish-btn">
+  <image src="/assets/images/publish.png" bind:tap="edite" />
+</view>
+<scroll-view scroll-y='true' style='height: 100%' lower-threshold='100' bindscrolltolower='lower'>
+  <template is="tab" data="{{typeActive,type}}"></template>
+  <view class="publish-list">
+    <template is="publish-list"></template>
+  </view>
+</scroll-view>

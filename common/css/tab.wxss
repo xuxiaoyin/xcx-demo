@@ -1,0 +1,20 @@
+.type{
+  display: flex;
+  margin: 20rpx 0;
+  height: 78rpx;
+  background: #fff;
+  font-size: 12px;
+  align-items: center;
+}
+.type .item{
+  flex: 1;
+  height: 78rpx;
+  line-height: 78rpx;
+  border-bottom: 4rpx solid #fff;
+  box-sizing: border-box;
+  text-align: center;
+}
+.type .active{
+  color: #b99646;
+  border-bottom: 4rpx solid #b99646;
+}

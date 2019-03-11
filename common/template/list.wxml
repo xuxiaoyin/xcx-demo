@@ -1,0 +1,38 @@
+<template name="list">
+  <view class="list" wx:for="{{list}}" wx:key="{{index}}"  >
+    <view class="check-box" wx:if="{{isDelete}}">
+      <checkbox-group  bind:change="checkboxChange" data-id="{{item.ID}}">
+        <label class="checkbox">
+           <checkbox  value="{{item.ID}}" checked="{{item.checked}}"  color="#f84d33"/>
+        </label>
+      </checkbox-group>
+    </view> 
+    <view bind:tap="toarticle" data-id="{{item.ID}}">
+      <view class="author">
+        <image src="{{httpUrl}}/{{item.USER.portrait}}" mode='aspectFill' />
+        <text>{{item.NAME}}-{{item.GRADE}} · {{item.PUBLISHDATE}}</text>
+      </view>
+      <view class="article-info">
+        <view class="title">{{item.TITLE}}</view>
+        <rich-text class="article" nodes="{{item.CONTENT.CONTENT}}" type="text"></rich-text>
+        <view wx:for="{{item.CONTENT.IMG}}" wx:key="{{index}}" class='pic'>
+          <image src='{{httpUrl}}/{{item}}' mode='aspectFit' />
+        </view>
+      </view>
+      <view class="public-info">
+        <text class="type-article">类型：{{item.TOPICID}}</text>
+        <text class="year">年代：{{item.SCORE}}</text>
+        <text class="source">来源：{{item.SOURCE}}</text>
+      </view>
+      <view class="skim-info">
+        <!--<view class="kan active"><image src="/assets/images/icon-kan.png"  mode="widthFix"/>{{item.HITSTOTAL}}</view>-->
+        <view class="kan">
+          <image src="/assets/images/icon-kan{{item.ISHITS}}.png" mode="widthFix" /> {{item.HITSTOTAL}}</view>
+        <view class="cang">
+          <image src="/assets/images/icon-cang{{item.ISCOLLECT}}.png" mode="widthFix" /> {{item.COLLECT}}</view>
+        <view class="zan">
+          <image src="/assets/images/icon-zan.png" mode="widthFix" /> {{item.AUTHORUNIT}}</view>
+      </view>
+    </view>
+  </view>
+</template>

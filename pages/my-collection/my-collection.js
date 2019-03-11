@@ -1,35 +1,26 @@
-// pages/index/index.js
+// pages/my-collection/my-collection.js
 var utils = require('../../utils/util.js');
-
 Page({
+
   data: {
+    _index:0,
+    barText:['我的收藏','我的点赞','浏览历史'],
     httpUrl: getApp().URL,
-    date: '2018', // 年代
-    mode:'date',
-    isSelect:true,
-    isSelectType:false,
-    type: [{
-      'id': '全部',
-      'name': '全部'
+    type: [
+    {
+      'id': '我的收藏',
+      'name': '我的收藏'
     },
     {
-      'id': '学校人物',
-      'name': '学校人物'
+      'id': '我的点赞',
+      'name': '我的点赞'
     },
     {
-      'id': '学校印记',
-      'name': '学校印记'
-    },
-    {
-      'id': '学校荣誉',
-      'name': '学校荣誉'
-    },
-    {
-      'id': '学校特色',
-      'name': '学校特色'
+      'id': '浏览历史',
+      'name': '浏览历史'
     }
     ],
-    typeActive: 0, // 栏目切换下标，默认0-全部
+    typeActive: 0, 
     category: [{
       'id': '0',
       'name': '校史网'
@@ -39,7 +30,7 @@ Page({
       'name': '年级史'
     }
     ],
-    categoryActive: 0, // 一级标题，校史网，年级史，切换下标
+    categoryActive: 0, 
 
     list: [], // 数据集合
     count: 10, // 总条数
@@ -54,33 +45,99 @@ Page({
     keyWord: '', // 关键字
 
     flag: true, // 标记是否是list追加数据（true）,刷新全部数据（false）
-    loading: false
+    loading: false,
+    isDelete: false,
+    deleteCount:0,
+    selectList:[]
   },
 
-  /**
-   * 初始化
-   */
   onLoad: function (options) {
-    //this.loadData();
+    let {barText}=this.data
+    console.log(options)
+    this.setData({
+      _index:options.index,
+      typeActive:options.index,
+    }),
+    wx.setNavigationBarTitle({
+      title: barText[options.index]
+    })
     this.getAtrList(null); // 加载首页文章列表
     utils.addhits({
-      type: '0', // 类型（0:网站，1：校史，2：大事记，3：校友圈，4：年级校史）
+      type: '0', 
       pointId: 'gyxsg' // id
     }); // 点击量+1
   },
-
-  /**
-   * 下拉加载更多
-   */
   lower() {
     if (!this.loading) {
       this.loadData();
     }
   },
-
-  /**
-   * 下拉加载更多-获取数据
-   */
+  delete(){
+    var that=this
+    this.setData({
+      isDelete:!that.data.isDelete
+    })
+  },
+  checkboxChange(e){
+    var that=this
+    console.log(e)
+    console.log('radio发生change事件，携带value值为：', e.detail.value+e.currentTarget.dataset.id)
+    let {deleteCount,selectList}=this.data;
+    if(!e.detail.value[0]){
+      deleteCount--;
+      let index=selectList.findIndex(item=>{
+        item===e.currentTarget.dataset.id
+      })
+      selectList.splice(index,1)
+    }else{
+      deleteCount++;
+      selectList.push(e.detail.value);
+      console.info(selectList)
+      that.setData({
+        selectList
+      })
+    }
+    this.setData({
+      deleteCount
+    })
+  },
+  clearAll(){
+    var that=this
+    wx.showModal({
+      title: '温馨提示',
+      content: '确认要清空吗？清空后将永远无法找回，请谨慎操作',
+      confirmText: '清空',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          that.setData({
+            list:'',
+            isDelete:false,
+            deleteCount:0,
+            selectList:[]
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  clearSome(){
+    let {list,selectList}=this.data
+    for (var i=0; i<list.length; i++) {  
+       for (var j=0; j<selectList.length; j++) {  
+           if (list[i].id == selectList[j]) {  
+               list.splice(i, 1);    
+           }  
+       }  
+    }  
+    this.setData({
+      list,
+      isDelete:false,
+      deleteCount:0,
+      selectList:[]
+    })
+  },
   loadData() {
     // 判断是不是最后一页
     if (this.data.pageNo == this.data.last) {
@@ -93,59 +150,15 @@ Page({
     });
     this.getAtrList(null);
   },
-
-  /**
-   * 校史，年级史切换
-   */
   changeCategory(e) {
     this.setData({
       categoryActive: e.currentTarget.dataset.index
     });
     var k = this.data.categoryActive;
-    if (k == 0) {
-      this.setData({
-        category: [{
-          'id': '0',
-          'name': '校史网'
-        },
-        {
-          'id': '1',
-          'name': '年级史'
-        }
-        ],
-        type: [{
-          'id': '全部',
-          'name': '全部'
-        },
-        {
-          'id': '学校人物',
-          'name': '学校人物'
-        },
-        {
-          'id': '学校印记',
-          'name': '学校印记'
-        },
-        {
-          'id': '学校荣誉',
-          'name': '学校荣誉'
-        },
-        {
-          'id': '学校特色',
-          'name': '学校特色'
-        }
-        ]
-      });
-    } else {
-      var gid = utils.getCookieByKey('gradeInfo', 'id');
-      console.log(gid);
-    }
     this.getAtrList(null);
   },
-
-  /**
-   * 栏目切换
-   */
   changeType(e) {
+    let {barText}=this.data
     var index = e.currentTarget.dataset.index;
     var id = this.data.type[index].id;
     this.setData({
@@ -155,12 +168,11 @@ Page({
       pageNo: 1,
       flag: false
     });
+    wx.setNavigationBarTitle({
+      title: barText[index]
+    })
     this.getAtrList(null);
   },
-
-  /**
-   * 搜索
-   */
   search() {
     this.setData({
       flag: false // 重新加载
@@ -174,37 +186,19 @@ Page({
     };
     this.getAtrList(para);
   },
-
-  /**
-   * 搜索框输入监听事件
-   */
   binput(e) {
     this.setData({
       keyWord: e.detail.value
     });
   },
-
-  /**
-   * 文章详情页跳转
-   */
   toarticle(e) {
     wx.navigateTo({
       url: '/pages/article/article?id=' + e.currentTarget.dataset.id,
     });
-  },
-
-  /**
-   * 时间选择
-   */
-  bindDateChange(e) {
     this.setData({
-      date: e.detail.value
-    });
+      isDelete:false
+    })
   },
-
-  /**
-   * 请求数据集
-   */
   getAtrList(para) {
     let {
       list,
@@ -218,7 +212,7 @@ Page({
     } = this.data;
     wx.showLoading({
       title: '正在拼命加载...',
-      mask: true
+      mask: false
     });
     this.setData({
       loading: true
@@ -241,6 +235,7 @@ Page({
         'cookie': wx.getStorageSync("cookie") //读取cookie
       },
       success: (res) => {
+        console.log(res.data)
         var rData = res.data;
         if (rData != null && rData.page != null) {
           var page = rData.page;

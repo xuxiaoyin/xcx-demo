@@ -1,15 +1,25 @@
 // pages/index/index.js
 Page({
   data: {
-    type:[
-      {'0':'公告通知'},
-      {'1':'新闻动态'}
+    type: [{
+      'id': '公告通知',
+      'name': '公告通知'
+    },
+    {
+      'id': '新闻动态',
+      'name': '新闻动态'
+    }
     ],
     typeActive:0,
-    category:[
-      { '0':'校史网'},
-      {'1':'年级史'}
-    ],
+    category: [{
+      'id': '0',
+      'name': '校史网'
+    },
+    {
+      'id': '1',
+      'name': '年级史'
+    }
+  ],
     categoryActive:0,
     list:[],
     pageNo:'1',

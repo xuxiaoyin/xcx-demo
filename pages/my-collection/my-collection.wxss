@@ -1,0 +1,51 @@
+/* pages/my-collection/my-collection.wxss */
+@import '/common/css/header.wxss';
+@import '/common/css/list.wxss';
+.delete-btn{
+  position: fixed;
+  z-index: 9999;
+  width: 116rpx;
+  height: 116rpx;
+  bottom: 100rpx;
+  right: 40rpx;
+  border-radius: 50%;
+  box-shadow: 0rpx 5rpx 10rpx 5rpx rgba(0, 0, 0, 0.2);
+}
+.delete-btn image{
+  width: 116rpx;
+  height: 116rpx;
+}
+.loading{
+  text-align: center;
+}
+.loading image{
+  width: 100rpx;
+}
+.clear-list{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 92rpx;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #f1f1f1;
+  font-size: 14px;
+}
+.clear-list .btn{
+  flex: 1;
+}
+.clear-list .line{
+  flex: 0 0 1rpx;
+  width: 1px;
+  height: 45rpx;
+  color: #c6c6c6;
+}
+.clear-list .delete{
+  color: #c6c6c6;
+}
+.clear-list .active{
+  color:#f84d33;
+}

@@ -10,7 +10,10 @@
     "pages/article/article",
     "pages/add-education/add-education",
     "pages/add-work/add-work",
-    "pages/notice-detail/notice-detail"
+    "pages/notice-detail/notice-detail",
+    "pages/publish/publish",
+    "pages/publish-add/publish-add",
+    "pages/my-collection/my-collection"
   ],
   "window": {
     "navigationBarBackgroundColor": "#b99646",

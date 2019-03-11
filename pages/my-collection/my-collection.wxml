@@ -1,0 +1,21 @@
+<import src="/common/template/header.wxml"></import>
+<import src="/common/template/list.wxml"></import>
+<view class="delete-btn">
+  <image src="/assets/images/delete-icon.png" bind:tap="delete" />
+</view>
+<scroll-view scroll-y='true' style='height: 100%' lower-threshold='100' bindscrolltolower='lower'>
+  <template is="header" data="{{categoryActive,type,category,typeActive}}"></template>
+
+  <view class="list-wrap">
+    <template is="list" data="{{list,httpUrl,isDelete}}"></template>
+    <view class='loading' wx:if='{{loading}}'>
+      <image mode='widthFix' src='/assets/loading/loading-bars.svg'></image>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="clear-list" wx:if="{{isDelete}}">
+  <view class="one-btn btn" bind:tap="clearAll">一键清空</view>
+  <view class="btn line">|</view>
+  <view class="delete btn {{deleteCount?'active':''}}" bind:tap="clearSome">删除<text wx:if="{{deleteCount}}">({{deleteCount}})</text></view>
+</view>

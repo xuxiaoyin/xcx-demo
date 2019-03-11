@@ -1,0 +1,22 @@
+<template name="publish-list">
+  <view class="list" bind:tap="toArticle">
+    <view class="list-top">
+      <view class="text">
+        <view class="title">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</view>
+        <view class="tip">已发布·2019-03-06</view>
+      </view>
+      <view class="first-pic">
+        <image src="/assets/images/author.jpg" mode="aspectFill"/>
+      </view>
+    </view>
+    <view class="list-bottom">
+      <view class="left">
+        栏目：学校人物
+      </view>
+      <view class="right">
+        <image src="/assets/images/edite.png" catch:tap="edite"/>
+        <image src="/assets/images/delete.png" catch:tap="delete" />
+      </view>
+    </view>
+  </view>
+</template>

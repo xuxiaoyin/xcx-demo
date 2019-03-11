@@ -39,7 +39,7 @@
         data-index="{{index}}"
         bind:tap="changeCategory"
       >
-        {{ item[index] }}
+        {{ item.name }}
       </view>
     </view>
   </view>
@@ -51,7 +51,7 @@
       bind:tap="changeType"
       data-index="{{index}}"
     >
-      {{ item[index] }}
+      {{ item.name }}
     </view>
   </view>
 </template>

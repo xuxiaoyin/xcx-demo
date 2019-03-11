@@ -1,0 +1,12 @@
+<template name="tab">
+  <view class="type">
+    <view 
+      class="item {{typeActive==index?'active':''}}" 
+      wx:for="{{ type }}" wx:key="index"
+      bind:tap="changeType"
+      data-index="{{index}}"
+    >
+      {{ item.name }}
+    </view>
+  </view>
+</template>

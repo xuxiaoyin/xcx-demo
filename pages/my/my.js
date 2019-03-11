@@ -6,20 +6,38 @@ Page({
 
   },
 
-  takePhoto() {
-    const ctx = wx.createCameraContext()
-    ctx.takePhoto({
-      quality: 'high',
-      success: (res) => {
-        this.setData({
-          src: res.tempImagePath
-        })
-      }
-    })
+  goEdit(){
+    wx.navigateTo({
+      url: '/pages/register/register',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
   },
-  error(e) {
-    console.log(e.detail)
-  }
 
+  goFabu(){
+    wx.navigateTo({
+      url: '/pages/publish/publish',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
+
+  goCollection(e){
+    console.log(e.currentTarget.dataset.index)
+    wx.navigateTo({
+      url: '/pages/my-collection/my-collection?index='+e.currentTarget.dataset.index,
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    })
+  }
 
 })

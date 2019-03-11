@@ -1,0 +1,44 @@
+<!--pages/publish-add/publish-add.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="title list">
+    <view class="name">标题：</view>
+    <input placeholder="标题" />
+  </view>
+
+  <view class="list">
+    <view class="name">类型：</view>
+    <picker bindchange="bindPickerChange" value="{{typeIndex}}" range="{{type}}">
+        {{type[typeIndex]}}
+    </picker>
+  </view>
+
+  <view class="list">
+    <view class="name">年代：</view>
+    <picker bindchange="bindDateChange" mode="date" fields="year" value="{{date}}"
+      start="1800" end="2019">
+        {{date}}
+    </picker>
+  </view>
+
+  <view class="list">
+    <view class="name">来源：</view>
+    <input placeholder="来源" />
+  </view>
+
+  <view class="content list">
+    <view class="name">正文：</view>
+    <textarea placeholder="正文" />
+  </view>
+
+  <view class="add-image">
+    <view wx:for="{{pics}}" wx:for-item="image" class="pic-box" wx:key="index">
+      <image src="{{image}}" data-src="{{image}}" bindtap="previewImage" mode="scaleToFill" />
+    </view>
+    <image src="/assets/images/add-img.png"  class="photo" bind:tap="chooseImage" wx:if="{{isShow}}"/>
+  </view>
+
+  <view class="btn-area">
+    <button form-type="submit">提交审核</button>
+    <button form-type="reset" class="clear">清空</button>
+  </view>
+</form>

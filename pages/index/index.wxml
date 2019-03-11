@@ -1,31 +1,12 @@
 <!--pages/index/index.wxml-->
  <import src="/common/template/header.wxml"></import>
+ <import src="/common/template/list.wxml"></import>
 <scroll-view scroll-y='true' style='height: 100%' lower-threshold='100' bindscrolltolower='lower'>
   
   <template is="header" data="{{date,mode,categoryActive,type,category,typeActive,isSelect,isSelectType}}"></template>
 
   <view class="list-wrap">
-    <view class="list" wx:for="{{api?list:list1}}" wx:key="{{index}}" data-id="{{item.ID}}" bind:tap="toarticle">
-      <view class="author">
-        <image src="/assets/images/author.jpg" mode="widthFix" />
-        <text>{{item.NAME}}-2020届3班 · {{item.PUBLISHDATE}}</text>
-      </view>
-      <view class="article-info">
-        <view class="title">{{item.TITLE}}</view>
-        <rich-text class="article" nodes="{{item.CONTENT}}" type="text"></rich-text>
-      </view>
-      <view class="public-info">
-        <text class="type-article">类型：{{item.TOPICID}}</text>
-        <text class="year">年代：2018</text>
-        <text class="source">来源：学校一百二十年</text>
-      </view>
-      <view class="skim-info">
-        <view class="kan active"><image src="/assets/images/icon-kan-active.png"  mode="widthFix"/> 1000</view>
-        <view class="cang"><image src="/assets/images/icon-cang.png" mode="widthFix" /> 1000</view>
-        <view class="zan"><image src="/assets/images/icon-zan.png"  mode="widthFix" /> 1000</view>
-      </view>
-    </view>
-
+    <template is="list" data="{{list,httpUrl}}"></template>
     <view class='loading' wx:if='{{loading}}'>
       <image mode='widthFix' src='/assets/loading/loading-bars.svg'></image>
     </view>

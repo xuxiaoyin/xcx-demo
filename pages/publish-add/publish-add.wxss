@@ -1,0 +1,59 @@
+/* pages/publish-add/publish-add.wxss */
+page{
+  background: #fff;
+  padding: 0 40rpx;
+  font-size: 13px;
+}
+.list{
+  display: flex;
+  line-height: 70rpx;
+}
+.list .name{
+  flex: 0 0 100rpx;
+  width: 100rpx;
+}
+.list input,.list textarea{
+  width: 570rpx;
+}
+.list input{
+  height: 70rpx;
+}
+.list textarea{
+  min-height: 500rpx;
+  line-height: 40rpx;
+  border: 1rpx solid #e6e6e6;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.add-image{
+  margin-top: 40rpx;
+}
+.add-image .pic-box{
+  display: inline-block;
+}
+.add-image image{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 10rpx 
+}
+.add-image .photo{
+  width: 100rpx;
+  height: 100rpx;
+}
+.btn-area{
+  display: flex;
+  width: 670rpx;
+  margin-top: 20rpx;
+  justify-content:space-between;
+}
+.btn-area button{
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #ffb100;
+  color: #fff;
+  font-size: 15px;
+}
+.btn-area .clear{
+  background: #ed5e50;
+}
