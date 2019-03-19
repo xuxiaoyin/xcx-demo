@@ -1,7 +1,7 @@
 .type{
   display: flex;
-  margin: 20rpx 0;
   height: 78rpx;
+  margin: 20rpx 0;
   background: #fff;
   font-size: 12px;
   align-items: center;

@@ -13,7 +13,13 @@
     "pages/notice-detail/notice-detail",
     "pages/publish/publish",
     "pages/publish-add/publish-add",
-    "pages/my-collection/my-collection"
+    "pages/my-collection/my-collection",
+    "pages/my-school-friend/my-school-friend",
+    "pages/add-friend/add-friend",
+    "pages/group/group",
+    "pages/friend-detail/friend-detail",
+    "pages/add-group/add-group",
+    "pages/add-group-detail/add-group-detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#b99646",

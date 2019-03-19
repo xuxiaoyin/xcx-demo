@@ -1,0 +1,15 @@
+/* pages/my-school-friend/my-school-friend.wxss */
+@import '/common/css/seach.wxss';
+@import '/common/css/friend-list.wxss';
+.top-wrap{
+  height: 110rpx;
+  background: #f7f7fa;
+}
+.content{
+  top: 110rpx;
+  padding-bottom: 110rpx;
+} 
+.list-fixed{
+  position: fixed;
+  top: 110rpx;
+ }

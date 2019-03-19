@@ -1,0 +1,7 @@
+<!--pages/add-friend/add-friend.wxml-->
+<import src="/common/template/seach.wxml"></import>
+<import src="/common/template/friend-list-nomenu.wxml"></import>
+
+<template is="seach" data="{{placeholder,nochange}}"></template>
+
+<template is="friend-list-nomenu" data="{{list,addFriend}}"></template>

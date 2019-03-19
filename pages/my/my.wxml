@@ -33,11 +33,11 @@
 </view>
 
 <view class="list-nav">
-  <view class="list">
+  <view class="list" bind:tap="goFriend">
     <view class="text">我的校友录</view>
     <image src="/assets/images/right.png" />
   </view>
-  <view class="list">
+  <view class="list" bind:tap="goGroup">
     <view class="text">我的群组</view>
     <image src="/assets/images/right.png" />
   </view>

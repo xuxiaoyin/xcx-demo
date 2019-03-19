@@ -1,0 +1,12 @@
+<import src="/common/template/tab.wxml"></import>
+<import src="/common/template/friend-list.wxml"></import>
+<view class="tab-wrap">
+  <template is="tab" data="{{type,typeActive}}"></template>
+</view>
+
+<template is="friend-list" 
+  data="{{toView,listMain,fixedTitle,fixedTop,isActive}}">
+</template>
+
+
+

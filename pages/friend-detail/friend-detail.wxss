@@ -1,0 +1,10 @@
+/* pages/friend-detail/friend-detail.wxss */
+
+.detail-list{
+  padding: 20rpx 24rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.top{
+  display: flex;
+}

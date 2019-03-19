@@ -1,0 +1,37 @@
+<template name="friend-list">
+  <view >
+  <!-- 左侧列表内容部分 -->
+    <scroll-view class="content" enable-back-to-top scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" bindscroll="onPageScroll"> 
+      <checkbox-group catch:change="checkboxChange" dada-check="checked">
+        <view wx:for="{{listMain}}" wx:for-item="group" wx:key="{{group.id}}"  id="{{ 'inToView'+group.id}}" data-id='{{group.id}}'> 
+          <view class="address_top" >{{group.region}}</view> 
+            <view wx:for="{{group.items}}" wx:for-item="item" wx:key="{{item.Id}}" > 
+              <label class="checkbox">
+                <view class="address_bottom" data-id='{{item.Id}}' bind:tap="goDetail">
+                  <image src="{{item.img}}"  class="pic"/>
+                  <text class="text">{{item.name}}</text>
+                  <checkbox value="{{item.img}}"  checked="{{false}}" wx:if="{{isCheckbox}}"/>
+                </view> 
+              </label>
+            </view> 
+        </view> 
+      </checkbox-group>
+    </scroll-view> 
+    
+    <!-- 顶部固定分类 -->
+    <view class="list-fixed {{fixedTitle=='' ? 'hide':''}}" style="transform:translate3d(0,{{fixedTop}}px,0);">
+      <view class="fixed-title">
+      {{fixedTitle}}
+      </view>
+    </view>
+    <!-- 右侧字母导航 -->
+    <view class="orientation_region"> 
+      <view class="orientation">#</view> 
+        <block wx:for="{{listMain}}"  wx:key="{{item.id}}"> 
+          <view class="orientation_city  {{isActive==item.id ? 'active':'' }}" bindtap="scrollToViewFn" data-id="{{item.id}}" >
+          {{item.region}}
+          </view> 
+      </block> 
+    </view>  
+  </view>
+</template>

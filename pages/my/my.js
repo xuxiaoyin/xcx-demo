@@ -38,6 +38,26 @@ Page({
       fail: ()=>{},
       complete: ()=>{}
     })
+  },
+  goFriend(){
+    wx.navigateTo({
+      url: '/pages/my-school-friend/my-school-friend',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    })
+  },
+  goGroup(){
+    wx.navigateTo({
+      url: '/pages/group/group',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    })
   }
 
 })

@@ -1,0 +1,13 @@
+/* pages/my-school-friend/my-school-friend.wxss */
+@import '/common/css/tab.wxss';
+@import '/common/css/friend-list.wxss';
+.tab-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.type{
+  margin: 0;
+}
+

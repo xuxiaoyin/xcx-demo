@@ -1,0 +1,38 @@
+<view class="list">
+  <view class="name">群名称：</view>
+  <input type="text"  placeholder="请输入群名称" class="inp"/>
+</view>
+
+<view class="list">
+  <view class="name">群类型：</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="inp"> 
+    <view class="picker">
+      {{array[index]}}
+    </view>
+  </picker>
+</view>
+
+<view class="list" wx:if="{{index==2}}">
+  <view class="name">解散时间：</view>
+  <picker 
+    mode="date"
+    value="{{date}}"
+    start="{{date}}"
+    end="2060-09-01"
+    bindchange="bindDateChange" class="inp"> 
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+</view>
+
+<view class="list">
+  <view class="name">群头像：</view>
+  <image src="{{Img}}"  wx:if="{{Img}}"/>
+  <image src="/assets/images/add-img.png" bindtap="chooseImg"/>
+</view>
+
+<view class="btn-wrap">
+  <view class="btn" bindtap="sure">确定</view>
+  <view class="btn cancel" bindtap="cancel">取消</view>
+</view>

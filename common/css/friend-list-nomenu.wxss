@@ -1,0 +1,48 @@
+.list{
+  padding: 0 20rpx; 
+  background: #fff;
+}
+.address_bottom{
+  display: flex;
+  height: 88rpx;
+  line-height: 88rpx; 
+  background: #fff;
+  color: #000000;
+  font-size: 14px;
+  padding: 18rpx 30rpx; 
+  border-bottom: 2rpx #ebebeb solid;
+  align-items: center;
+  white-space: nowrap;
+}
+.left-section{
+  flex:1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.left-section .pic{
+  flex: 0 0 88rpx;
+  width: 88rpx;
+  height: 88rpx;
+  margin-right: 30rpx;
+  border-radius: 8rpx;
+}
+.left-section .text{
+  flex: 1;
+}
+.right-btn{
+  flex: 0 0 128rpx;
+  width: 128rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  background: #ededed;
+  text-align: center;
+  border-radius: 8rpx;
+  color: #05c160;
+}
+.active{
+  background: #05c160;
+  color: #fff;
+}

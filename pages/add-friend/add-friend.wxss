@@ -1,0 +1,3 @@
+/* pages/add-friend/add-friend.wxss */
+@import '/common/css/seach.wxss';
+@import '/common/css/friend-list-nomenu.wxss';

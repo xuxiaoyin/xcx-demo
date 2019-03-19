@@ -1,0 +1,31 @@
+.search-wrap{
+  padding: 0 40rpx;
+  height: 72rpx;
+  display: flex;
+  margin: 20rpx auto;
+  font-size: 13px;
+}
+.search-wrap .inp{
+  height: 72rpx;
+  flex: 1;
+  padding: 0 20rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+.search-btn{
+  height: 72rpx;
+  line-height: 72rpx;
+  flex: 0 0 160rpx;
+  width: 160rpx;
+  margin-left: 30rpx;
+  text-align: center;
+  background: #ffb100;
+  color: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+.sure{
+  background: #07c062;
+  margin-left: 510rpx;
+}

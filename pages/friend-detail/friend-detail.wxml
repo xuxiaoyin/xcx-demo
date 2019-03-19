@@ -1,0 +1,22 @@
+<!--pages/friend-detail/friend-detail.wxml-->
+<view class="detail-wrap">
+  <view  class="top detail-list">
+    <image  src="/assets/images/author.jpg" mode="aspectFill" class="pic"/>
+    <view class="text">
+      <view class="list name">
+          <text>张英杰</text>
+          <image src="/assets/images/boy.png" />
+      </view>
+      <view class="list">
+          微信号：123456
+          电话号码：13333333333
+          现居地：广东广州
+      </view>
+    </view>
+  </view>
+
+  <view class="detail-list">
+    <text>更多信息</text> <image  src="/assets/images/right.png" />
+  </view>
+
+</view>

@@ -1,0 +1,7 @@
+<template name="seach">
+  <view class="search-wrap">
+    <input type="text" placeholder="{{placeholder}}" class="inp" wx:if="{{nochange}}" />
+    <view class="search-btn" wx:if="{{nochange}}">搜索</view>
+    <view class="search-btn sure" wx:if="{{changeBtn}}" bind:tap="sureCreat" >确定</view>
+  </view>
+</template>

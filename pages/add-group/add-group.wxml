@@ -1,0 +1,11 @@
+<import src="/common/template/seach.wxml"></import>
+<import src="/common/template/friend-list.wxml"></import>
+
+<view class="top-wrap">
+  <template is="seach" data="{{placeholder,nochange,changeBtn}}"></template>
+</view>
+
+
+<template is="friend-list" 
+  data="{{toView,listMain,fixedTitle,fixedTop,isActive,isCheckbox}}">
+</template>

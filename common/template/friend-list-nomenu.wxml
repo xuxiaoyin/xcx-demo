@@ -1,0 +1,15 @@
+<template name="friend-list-nomenu">
+  <scroll-view class="content"  scroll-y="true" scroll-with-animation="true"> 
+    <view wx:for="{{list}}" wx:for-item="item" wx:key="{{item.friendID}}" class="list"> 
+      <view class="address_bottom" data-id='{{item.friendID}}' bind:tap="goDetail">
+        <view class="left-section">
+          <image src="{{item.friendImg}}"  class="pic"/>
+          <view class="text">{{item.friendName}}</view>
+        </view>
+        <view class="right-btn {{item.recive?'active':''}}" wx:if="{{addFriend}}">
+          {{item.recive?'接受':'添加'}}
+        </view>
+      </view> 
+    </view> 
+  </scroll-view> 
+</template>
