@@ -1,22 +1,49 @@
 <!--pages/friend-detail/friend-detail.wxml-->
 <view class="detail-wrap">
   <view  class="top detail-list">
-    <image  src="/assets/images/author.jpg" mode="aspectFill" class="pic"/>
+    <view class="avtor">
+      <image  src="/assets/images/author.jpg" mode="aspectFill" />
+    </view>  
     <view class="text">
       <view class="list name">
           <text>张英杰</text>
-          <image src="/assets/images/boy.png" />
+          <image src="/assets/images/girl.png" />
       </view>
       <view class="list">
-          微信号：123456
-          电话号码：13333333333
-          现居地：广东广州
+          <view class="item">微信号：123456</view>
+          <view class="item">电话号码：13333333333</view>
+          <view class="item">现居地：广东广州</view>       
       </view>
     </view>
   </view>
 
   <view class="detail-list">
-    <text>更多信息</text> <image  src="/assets/images/right.png" />
+    <view class="more">
+      更多信息<image  src="/assets/images/right.png" mode="widthFix"/>
+    </view>
+  </view>
+
+  <view class="operate-wrap">
+    <view class="operate">
+      <image src="/assets/images/msg.png"  mode="widthFix"/>
+      发消息
+    </view>
+    <view class="operate">
+      <image src="/assets/images/delete-friend.png"  mode="widthFix"/>
+      删除好友
+    </view>
+    <view class="operate">
+      <image src="/assets/images/refuse.png"  mode="widthFix"/>
+      拒绝请求
+    </view>
+    <view class="operate">
+      <image src="/assets/images/pass.png"  mode="widthFix"/>
+      通过验证
+    </view>
+    <view class="operate">
+      <image src="/assets/images/add-friend.png"  mode="widthFix"/>
+      添加好友
+    </view>
   </view>
 
 </view>

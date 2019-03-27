@@ -8,3 +8,70 @@
 .top{
   display: flex;
 }
+.avtor{
+  flex: 0 0 140rpx;
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 48rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avtor image{
+  width: 140rpx;
+  height: 140rpx;
+}
+.text{
+  flex: 1;
+}
+.name {
+  font-size: 0;
+}
+.name image{
+  display: inline-block;
+  vertical-align: top;
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 11rpx;
+}
+.name text{
+  display: inline-block;
+  line-height: 62rpx;
+  vertical-align: top;
+  font-size: 16px;
+  font-weight: bold;
+}
+.list .item{
+  font-size: 13px;
+  line-height: 50rpx;
+  color: #959595;
+}
+.more{
+  font-size: 14px;
+  line-height: 100rpx;
+}
+.more image{
+  float: right;
+  width: 20rpx;
+  margin-top: 36rpx;
+}
+.operate-wrap{
+  background: #fff;
+}
+.operate{
+  line-height: 120rpx;
+  text-align: center;
+  color: #506591;
+  font-size: 14px;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.operate:nth-last-of-type(1){
+  border: none;
+}
+.operate image{
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 36rpx;
+  margin-right: 10rpx;
+  width: 48rpx;
+}
